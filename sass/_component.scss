@@ -1,0 +1,122 @@
+html {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    background-color: $pale-blue;
+    @include background(url('../images/pattern-background-mobile.svg'));
+    @media (min-width: 768px) {
+        @include background(url('../images/pattern-background-desktop.svg'))
+    }
+}
+
+.component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    @include resolution(95%, 80%);
+    max-width: 400px;
+    max-height: 600px;
+    background-color: $component-color;
+
+    &__background-image {
+        @include resolution(100%, 28%);
+        @include background(url('../images/illustration-hero.svg'));
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        overflow: hidden;
+    }
+
+    &__title {
+        padding: 20px 0;
+        @include text-parameters($dark-blue, 2.4rem, 900);
+    }
+
+    &__description {
+        padding: 0 30px;
+        line-height: 30px;
+        @include text-parameters($desaturated-blue, 1.6rem);
+    }
+
+    .conditions {
+        display: flex;
+        align-items: center;
+        @include resolution(85%);
+        margin: 25px auto;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: $very-pale-blue;
+
+        &__icon {
+            margin-right: 15px;
+        }
+
+        &__description {
+            line-height: 20px;
+
+            &-plan {
+                @include text-parameters($dark-blue, 1.4rem, 900);
+            }
+    
+            &-price {
+                @include text-parameters($desaturated-blue, 1.3rem, 500);
+            }
+        }
+
+        &__change {
+            margin-left: auto;
+            color: $bright-blue;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                color: lighten($bright-blue, 10%);
+                text-decoration: none; 
+            }
+        }
+    }
+    &__button {
+        @include resolution(85%);
+        margin-bottom: 10px;
+        padding: 15px 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+
+        &--proceed {
+            border: 0px;
+            border-radius: 8px;
+            background-color: $bright-blue;
+            color: $component-color;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($bright-blue, 10%);
+            }
+        }
+
+        &--cancel {
+            color: $desaturated-blue;
+            cursor: pointer;
+
+            &:hover {
+                color: darken($desaturated-blue, 50%);
+            }
+        }
+    }
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+}

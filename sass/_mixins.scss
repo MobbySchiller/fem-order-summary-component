@@ -1,0 +1,18 @@
+@mixin background($image) {
+    background-image: $image;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin resolution($width, $height: auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin text-parameters($color, $size, $weight: 500, $align: center) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    text-align: $align;
+}
