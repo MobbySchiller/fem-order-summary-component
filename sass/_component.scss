@@ -20,26 +20,27 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
-    @include resolution(95%, 80%);
+    @include resolution(88%);
     max-width: 400px;
     max-height: 600px;
     background-color: $component-color;
+    box-shadow: 0px 1px 10px 0 $desaturated-blue;
+    z-index: 2;
 
     &__background-image {
-        @include resolution(100%, 28%);
+        @include resolution(100%, 300px);
         @include background(url('../images/illustration-hero.svg'));
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
-        overflow: hidden;
     }
 
     &__title {
-        padding: 20px 0;
+        padding: 35px 0 15px;
         @include text-parameters($dark-blue, 2.4rem, 900);
     }
 
     &__description {
-        padding: 0 30px;
+        padding: 0 35px;
         line-height: 30px;
         @include text-parameters($desaturated-blue, 1.6rem);
     }
@@ -103,6 +104,7 @@ body {
         }
 
         &--cancel {
+            margin-bottom: 20px;
             color: $desaturated-blue;
             cursor: pointer;
 
